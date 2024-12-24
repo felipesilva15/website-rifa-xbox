@@ -1,7 +1,25 @@
-@if (!isLoading) {
-    <ul>
-        @for (item of cardNumbers; track $index) {
-            <li>{{ item.number | padNumber: 3 }}</li>
+<div class="my-5 container flex justify-content-center align-items-center flex-column">
+    <h2>Cartela</h2>
+    <p class="text-center">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at diam sit amet tortor semper interdum eget id tortor. Curabitur nunc arcu, semper eu ex id, varius hendrerit leo. Curabitur est lectus, ullamcorper vitae sem ac, gravida aliquet massa.
+    </p>
+    <div class="card my-3 mx-1 flex flex-row flex-wrap justify-content-center gap-3 p-3 number-table">
+        @if (!isLoading) {
+            @for (item of cardNumbers; track $index) {
+                <div class="number-box p-2">
+                    <span>{{ item.number | padNumber: 3 }}</span>
+                    @if (!item.avaiable) {
+                        <i class="pi pi-times font-bold relative number-unavailable text-lg"></i>
+                    }
+                </div>
+            }
+        } @else {
+            @for (item of [].constructor(200); track $index) {
+                <p-skeleton size="2.5rem" />
+            }
         }
-    </ul>
-}
+    </div>
+    <div class="flex justify-content-center align-items-center gap-1">
+        <i class="pi pi-times font-bold number-unavailable text-lg"></i> - Número não disponível
+    </div>
+</div>

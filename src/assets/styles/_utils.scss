@@ -1,0 +1,16 @@
+.card {
+    background: var(--surface-card);
+    border: 1px solid var(--surface-border);
+    padding: 2rem;
+    box-shadow: var(--card-shadow);
+    border-radius: var(--border-radius);
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+}

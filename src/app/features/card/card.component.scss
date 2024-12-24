@@ -1,0 +1,19 @@
+.number-box {
+    box-shadow: var(--box-shadow);
+    border-radius: 4px;
+    width: 2.5rem;
+    height: 2.5rem;
+
+    .number-unavailable {
+        top: -19px;
+        left: 5px;
+    }
+}
+
+.number-table {
+    max-width: 600px;
+}
+
+.number-unavailable {
+    color: #FF0000;
+}

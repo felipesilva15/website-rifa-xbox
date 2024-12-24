@@ -1,4 +1,5 @@
-:root {
-    --xbox-green: #107C10;
-    --xbox-green-dark: #0E670E;
-}
+@use "primeflex/primeflex.scss";
+@use "primeicons/primeicons.css";
+@use "./variables";
+@use "./global";
+@use "./utils";

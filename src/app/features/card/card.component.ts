@@ -2,11 +2,12 @@ import { RaffleService } from './../../shared/services/raffle.service';
 import { RaffleCardNumber } from '../../shared/models/raffle-card-number';
 import { Component, OnInit } from '@angular/core';
 import { PadNumberPipe } from '../../shared/pipes/pad-number.pipe';
+import { SkeletonModule } from 'primeng/skeleton';
 
 @Component({
   selector: 'app-card',
   standalone: true,
-  imports: [PadNumberPipe],
+  imports: [PadNumberPipe, SkeletonModule],
   templateUrl: './card.component.html',
   styleUrl: './card.component.scss'
 })
