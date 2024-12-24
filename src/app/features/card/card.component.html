@@ -1,0 +1,7 @@
+@if (!isLoading) {
+    <ul>
+        @for (item of cardNumbers; track $index) {
+            <li>{{ item.number | padNumber: 3 }}</li>
+        }
+    </ul>
+}

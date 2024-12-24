@@ -9,8 +9,8 @@ import { RaffleCardNumber } from '../models/raffle-card-number';
   providedIn: 'root'
 })
 export class RaffleService {
-  private readonly baseUrl = environment.baseUrlApi + '/raffle';
-  private readonly raffle_id = environment.raffle_id;
+  private readonly baseUrl: string = environment.baseUrlApi + '/raffle';
+  private readonly raffle_id: number = environment.raffle_id;
 
   constructor(private http: HttpClient) { }
 
