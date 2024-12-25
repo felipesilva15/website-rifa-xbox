@@ -1,22 +1,28 @@
 <div class="flex flex-row gap-3">
-    <div class="card flex flex-column gap-2 text-center">
-        <span>{{ weeks }}</span>
-        <span>Semanas</span>
-    </div>
-    <div class="card flex flex-column gap-2 text-center">
-        <span>{{ days }}</span>
-        <span>Dias</span>
-    </div>
-    <div class="card flex flex-column gap-2 text-center">
-        <span>{{ hours }}</span>
-        <span>Horas</span>
-    </div>
-    <div class="card flex flex-column gap-2 text-center">
-        <span>{{ minutes }}</span>
-        <span>Minutos</span>
-    </div>
-    <div class="card flex flex-column gap-2 text-center">
-        <span>{{ seconds }}</span>
-        <span>Segundos</span>
-    </div>
+    @if (!isLoading) {
+        <div class="interval-box card flex flex-column justify-content-center gap-2 text-center">
+            <span class="text-3xl font-light">{{ weeks | padNumber: 2 }}</span>
+            <span>Semanas</span>
+        </div>
+        <div class="interval-box card flex flex-column justify-content-center gap-2 text-center">
+            <span class="text-3xl font-light">{{ days | padNumber: 2 }}</span>
+            <span>Dias</span>
+        </div>
+        <div class="interval-box card flex flex-column justify-content-center gap-2 text-center">
+            <span class="text-3xl font-light">{{ hours | padNumber: 2 }}</span>
+            <span>Horas</span>
+        </div>
+        <div class="interval-box card flex flex-column justify-content-center gap-2 text-center">
+            <span class="text-3xl font-light">{{ minutes | padNumber: 2 }}</span>
+            <span>Minutos</span>
+        </div>
+        <div class="interval-box card flex flex-column justify-content-center gap-2 text-center">
+            <span class="text-3xl font-light">{{ seconds | padNumber: 2 }}</span>
+            <span>Segundos</span>
+        </div>
+    } @else {
+        @for (_ of [].constructor(5); track $index) {
+            <p-skeleton size="6rem" />
+        }
+    }
 </div>

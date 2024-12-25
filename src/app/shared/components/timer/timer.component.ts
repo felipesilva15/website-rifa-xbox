@@ -1,20 +1,26 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { PadNumberPipe } from '../../pipes/pad-number.pipe';
+import { SkeletonModule } from 'primeng/skeleton';
 
 @Component({
   selector: 'app-timer',
   standalone: true,
-  imports: [],
+  imports: [
+    PadNumberPipe,
+    SkeletonModule
+  ],
   templateUrl: './timer.component.html',
   styleUrl: './timer.component.scss'
 })
 export class TimerComponent implements OnInit {
-  @Input() limitDate: Date = new Date();
+  @Input() limitDate!: Date;
   @Input() timerInterval: number = 1000;
   weeks: number = 0;
   days: number = 0;
   hours: number = 0;
   minutes: number = 0;
   seconds: number = 0;
+  isLoading: boolean = true;
 
   constructor() { }
 
@@ -24,20 +30,26 @@ export class TimerComponent implements OnInit {
 
   initTimer(): void {
     setInterval(() => {
+      if (!this.limitDate) {
+        return;
+      }
+
       const currentDate = new Date();
       const msDifference = this.limitDate.getTime() - currentDate.getTime();
 
-      this.seconds = Math.floor(msDifference / 1000);
-      this.minutes = Math.floor(this.seconds / 60);
-      this.hours = Math.floor(this.minutes / 60);
-      this.days = Math.floor(this.hours / 24);
-      this.weeks = Math.floor(this.days / 7);
+      this.seconds = msDifference / 1000;
+      this.minutes = msDifference / 60000;
+      this.hours = msDifference / 360000;
+      this.days = msDifference / 86400000;
+      this.weeks = msDifference / 604800000;
 
-      this.seconds = this.seconds % 60;
-      this.minutes = this.seconds % 60;
-      this.hours = this.minutes % 24;
-      this.days = this.hours % 7;
+      this.seconds = Math.floor(this.seconds % 60);
+      this.minutes = Math.floor(this.minutes % 60);
+      this.hours = Math.floor(this.hours % 24);
+      this.days = Math.floor(this.days % 7);
+      this.weeks = Math.floor(this.weeks);
 
+      this.isLoading = false;
     }, this.timerInterval);
   }
 }

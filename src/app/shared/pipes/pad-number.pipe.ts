@@ -7,10 +7,6 @@ import { PadDirection } from '../enums/pad-direction';
 })
 export class PadNumberPipe implements PipeTransform {
   transform(value: number, digits: number, character: string = '0', direction: PadDirection = PadDirection.Left): string {
-    if (!value) {
-      return '';
-    }
-
     let paddedNumber: string = value.toString();
     
     if (direction == PadDirection.Left) {
