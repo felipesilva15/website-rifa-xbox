@@ -16,7 +16,8 @@ import { HowItWorksComponent } from "./features/how-it-works/how-it-works.compon
     FooterComponent,
     ContactsComponent,
     ScrollTop,
-    AboutUsComponent
+    AboutUsComponent,
+    HowItWorksComponent
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
