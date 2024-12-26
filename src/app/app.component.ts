@@ -4,6 +4,8 @@ import { CardComponent } from "./features/card/card.component";
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { ContactsComponent } from "./features/contacts/contacts.component";
 import { ScrollTop } from 'primeng/scrolltop';
+import { AboutUsComponent } from "./features/about-us/about-us.component";
+import { HowItWorksComponent } from "./features/how-it-works/how-it-works.component";
 
 @Component({
   selector: 'app-root',
@@ -13,7 +15,8 @@ import { ScrollTop } from 'primeng/scrolltop';
     CardComponent,
     FooterComponent,
     ContactsComponent,
-    ScrollTop
+    ScrollTop,
+    AboutUsComponent
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
