@@ -1,0 +1,15 @@
+<header [class.scrolled]="isScrolled" class="fixed top-0 left-0 w-full z-5">
+    <nav class="flex flex-row justify-content-between align-items-center container h-full">
+        <a href="#">Logo</a>
+        <ul class="flex flex-row justify-content-end list-none m-0 p-0">
+            @for (item of menuItems; track $index) {
+                <li>
+                    <div>
+                        <!-- <a class="no-underline font-bold text-0 hover:underline cursor-pointer" (click)="scrollTo(item.link)">{{ item.label }}</a> -->
+                        <p-button [label]="item.label" variant="text" (onClick)="scrollTo(item.link)" />
+                    </div>
+                </li>
+            }
+        </ul>
+    </nav>
+  </header>
