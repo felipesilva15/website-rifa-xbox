@@ -1,11 +1,13 @@
 <div class="my-5 container flex justify-content-center align-items-center flex-column">
     <h2>Como funciona</h2>
+    <h3>Compra de bilhetes</h3>
     <p class="text-center">
         Lorem ipsum.
     </p>
+    <h3>Sorteio</h3>
     <div class="mt-3 text-center">
         <p>
-            A rifa ocorrerá através do sorteio da <a href="https://loterias.caixa.gov.br/Paginas/Federal.aspx" target="_blank">Loteria federal</a> no dia <span>@if (raffleEndDate) { {{ raffleEndDate | date: "dd/MM/Y" }} - {{ getDayOfWeek(raffleEndDate) }} } @else { <p-skeleton width="5rem" styleClass="inline-block" /> }</span>
+            A rifa ocorrerá através do sorteio da <a href="https://loterias.caixa.gov.br/Paginas/Federal.aspx" target="_blank">Loteria federal</a> no dia <span>@if (raffleEndDate) { {{ raffleEndDate | date: "dd/MM/Y" }} - {{ getDayOfWeek(raffleEndDate) }} } @else { <p-skeleton width="11.5rem" styleClass="inline-block" /> }</span>
         </p>
         <app-timer [limitDate]="raffleEndDate" />
     </div>

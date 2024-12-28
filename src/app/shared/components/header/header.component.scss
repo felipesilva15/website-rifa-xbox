@@ -1,0 +1,14 @@
+header {
+    height: 60px;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    background-color: transparent;
+
+    &.scrolled {
+        background-color: #fff;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    
+        a {
+            color: #000; // Cor do texto quando o fundo é branco
+        }
+    }
+}

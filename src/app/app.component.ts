@@ -6,6 +6,7 @@ import { ContactsComponent } from "./features/contacts/contacts.component";
 import { ScrollTop } from 'primeng/scrolltop';
 import { AboutUsComponent } from "./features/about-us/about-us.component";
 import { HowItWorksComponent } from "./features/how-it-works/how-it-works.component";
+import { HeaderComponent } from "./shared/components/header/header.component";
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,8 @@ import { HowItWorksComponent } from "./features/how-it-works/how-it-works.compon
     ContactsComponent,
     ScrollTop,
     AboutUsComponent,
-    HowItWorksComponent
+    HowItWorksComponent,
+    HeaderComponent
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
