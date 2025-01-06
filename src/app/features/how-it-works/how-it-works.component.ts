@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Raffle } from '../../shared/models/raffle';
 import { RaffleService } from '../../shared/services/raffle.service';
 import { TimerComponent } from "../../shared/components/timer/timer.component";
-import { DatePipe } from '@angular/common';
+import { CurrencyPipe, DatePipe } from '@angular/common';
 import { SkeletonModule } from 'primeng/skeleton';
 
 @Component({
@@ -11,7 +11,8 @@ import { SkeletonModule } from 'primeng/skeleton';
   imports: [
     TimerComponent,
     SkeletonModule,
-    DatePipe
+    DatePipe,
+    CurrencyPipe
   ],
   templateUrl: './how-it-works.component.html',
   styleUrl: './how-it-works.component.scss'

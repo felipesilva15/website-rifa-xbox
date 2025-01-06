@@ -10,12 +10,33 @@
         <p class="text-center my-1">
             Para realizar todo o processo de compra dos bilhetes, basta seguir o passo-a-passo abaixo.
         </p>
-        <div class="mt-3">
+        <div class="mt-3 flex flex-row flex-wrap gap-5 justify-content-center">
             <div class="card step-card flex flex-column gap-2 py-2 px-4">
                 <span class="font-bold text-lg">Escolha</span>
                 <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at diam sit amet tortor semper interdum eget id tortor.</span>
                 <div class="step-number flex justify-content-center align-items-center relative">
                     <span class="font-light text-white text-xl py-2">01</span>
+                </div>
+            </div>
+            <div class="card step-card flex flex-column gap-2 py-2 px-4">
+                <span class="font-bold text-lg">Contate-nos</span>
+                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at diam sit amet tortor semper interdum eget id tortor.</span>
+                <div class="step-number flex justify-content-center align-items-center relative">
+                    <span class="font-light text-white text-xl py-2">02</span>
+                </div>
+            </div>
+            <div class="card step-card flex flex-column gap-2 py-2 px-4">
+                <span class="font-bold text-lg">Pague o valor de</span>
+                <span class="font-bold text-3xl" style="color: var(--xbox-green);">{{ raffle.ticket_value | currency: 'BRL' }}</span>
+                <div class="step-number flex justify-content-center align-items-center relative">
+                    <span class="font-light text-white text-xl py-2">03</span>
+                </div>
+            </div>
+            <div class="card step-card flex flex-column gap-2 py-2 px-4">
+                <span class="font-bold text-lg">Aguarde</span>
+                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at diam sit amet tortor semper interdum eget id tortor.</span>
+                <div class="step-number flex justify-content-center align-items-center relative">
+                    <span class="font-light text-white text-xl py-2">04</span>
                 </div>
             </div>
         </div>
