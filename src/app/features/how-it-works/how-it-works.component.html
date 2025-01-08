@@ -10,7 +10,7 @@
         <p class="text-center my-1">
             Para realizar todo o processo de compra dos bilhetes, basta seguir o passo-a-passo abaixo.
         </p>
-        <div class="grid grid-nogutter nested-grid">
+        <div class="grid grid-nogutter nested-grid mt-3">
             <div class="col-6">
                 <div class="flex flex-column align-items-end gap-3 mr-3">
                     <div class="card step-card flex flex-column gap-2 py-2 px-4">
@@ -22,7 +22,9 @@
                     </div>
                     <div class="card step-card flex flex-column gap-2 py-2 px-4">
                         <span class="font-bold text-lg">Pague o valor de</span>
-                        <span class="font-bold text-3xl" style="color: var(--xbox-green);">{{ raffle.ticket_value | currency: 'BRL' }}</span>
+                        <span class="font-bold text-3xl" style="color: var(--xbox-green);">
+                            @if (!isLoading) { {{ raffle.ticket_value | currency: 'BRL' }} } @else {<p-skeleton width="8rem" height="30px" styleClass="inline-block" />}
+                        </span>
                         <div class="step-number flex justify-content-center align-items-center relative">
                             <span class="font-light text-white text-xl py-2">03</span>
                         </div>
@@ -30,7 +32,7 @@
                 </div>
             </div>
             <div class="col-6">
-                <div class="flex flex-column gap-3 ml-3" style="margin-top: 140px;">
+                <div class="flex flex-column gap-3 ml-3" style="margin-top: 80px;">
                     <div class="card step-card flex flex-column gap-2 py-2 px-4">
                         <span class="font-bold text-lg">Contate-nos</span>
                         <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at diam sit amet tortor semper interdum eget id tortor.</span>
