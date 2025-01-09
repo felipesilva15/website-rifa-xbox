@@ -4,9 +4,13 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { providePrimeNG } from 'primeng/config';
 import Aura from '@primeng/themes/aura';
 import { definePreset } from "@primeng/themes";
-
 import { routes } from './app.routes';
 import { provideHttpClient } from '@angular/common/http';
+import {LOCALE_ID, DEFAULT_CURRENCY_CODE} from '@angular/core';
+import { registerLocaleData } from '@angular/common';
+import localePt from '@angular/common/locales/pt';
+
+registerLocaleData(localePt, 'pt-BR');
 
 const Noir = definePreset(Aura, {
   semantic: {
@@ -74,6 +78,8 @@ export const appConfig: ApplicationConfig = {
           primary: 'noir'
         }
       }
-    })
+    }),
+    { provide: LOCALE_ID, useValue: 'pt-BR' },
+    { provide: DEFAULT_CURRENCY_CODE, useValue: 'BRL' },
   ]
 };

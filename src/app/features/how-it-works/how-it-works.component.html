@@ -2,7 +2,7 @@
     <h2>Como funciona</h2>
     <div>
         <p class="text-center my-1">
-            Nesta seção você poderá entender sobre como irá funcionar esta rifa, tanto a compra dos bilhetes quanto referente ao sorteio do prêmio.
+            Nesta seção você poderá entender sobre como irá funcionar esta rifa, tanto a compra dos bilhetes quanto referente ao sorteio do bilhete premiado.
         </p>
     </div>
     <h3>Compra de bilhetes</h3>
@@ -13,19 +13,19 @@
         <div class="grid grid-nogutter nested-grid mt-3">
             <div class="col-6">
                 <div class="flex flex-column align-items-end gap-3 mr-3">
-                    <div class="card step-card flex flex-column gap-2 py-2 px-4">
+                    <div class="card step-card relative flex flex-column gap-2 py-2 px-4">
                         <span class="font-bold text-lg">Escolha</span>
-                        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at diam sit amet tortor semper interdum eget id tortor.</span>
-                        <div class="step-number flex justify-content-center align-items-center relative">
+                        <span>Escolha um ou mais números disponíveis na cartela logo abaixo.</span>
+                        <div class="step-number flex justify-content-center align-items-center absolute">
                             <span class="font-light text-white text-xl py-2">01</span>
                         </div>
                     </div>
-                    <div class="card step-card flex flex-column gap-2 py-2 px-4">
+                    <div class="card step-card relative flex flex-column gap-2 py-2 px-4">
                         <span class="font-bold text-lg">Pague o valor de</span>
-                        <span class="font-bold text-3xl" style="color: var(--xbox-green);">
-                            @if (!isLoading) { {{ raffle.ticket_value | currency: 'BRL' }} } @else {<p-skeleton width="8rem" height="30px" styleClass="inline-block" />}
+                        <span class="font-bold text-4xl" style="color: var(--xbox-green);">
+                            @if (!isLoading) { {{ raffle.ticket_value | currency }} } @else {<p-skeleton width="8rem" height="30px" styleClass="inline-block" />}
                         </span>
-                        <div class="step-number flex justify-content-center align-items-center relative">
+                        <div class="step-number flex justify-content-center align-items-center absolute">
                             <span class="font-light text-white text-xl py-2">03</span>
                         </div>
                     </div>
@@ -33,59 +33,51 @@
             </div>
             <div class="col-6">
                 <div class="flex flex-column gap-3 ml-3" style="margin-top: 80px;">
-                    <div class="card step-card flex flex-column gap-2 py-2 px-4">
+                    <div class="card step-card relative flex flex-column gap-2 py-2 px-4">
                         <span class="font-bold text-lg">Contate-nos</span>
-                        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at diam sit amet tortor semper interdum eget id tortor.</span>
-                        <div class="step-number flex justify-content-center align-items-center relative">
+                        <span>Entre em contato conosco para reservarmos seu número e realizar o pagamento por ele(s).</span>
+                        <div class="step-number flex justify-content-center align-items-center absolute">
                             <span class="font-light text-white text-xl py-2">02</span>
                         </div>
                     </div>
-                    <div class="card step-card flex flex-column gap-2 py-2 px-4">
+                    <div class="card step-card relative flex flex-column gap-2 py-2 px-4">
                         <span class="font-bold text-lg">Aguarde</span>
-                        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at diam sit amet tortor semper interdum eget id tortor.</span>
-                        <div class="step-number flex justify-content-center align-items-center relative">
+                        <span>Aguarde até que todos os números da rifa sejam comprados e o bilhete ganhador seja sorteado.</span>
+                        <div class="step-number flex justify-content-center align-items-center absolute">
                             <span class="font-light text-white text-xl py-2">04</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- <div class="mt-3 flex flex-row flex-wrap gap-5 justify-content-center">
-            <div class="card step-card flex flex-column gap-2 py-2 px-4">
-                <span class="font-bold text-lg">Escolha</span>
-                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at diam sit amet tortor semper interdum eget id tortor.</span>
-                <div class="step-number flex justify-content-center align-items-center relative">
-                    <span class="font-light text-white text-xl py-2">01</span>
-                </div>
-            </div>
-            <div class="card step-card flex flex-column gap-2 py-2 px-4">
-                <span class="font-bold text-lg">Contate-nos</span>
-                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at diam sit amet tortor semper interdum eget id tortor.</span>
-                <div class="step-number flex justify-content-center align-items-center relative">
-                    <span class="font-light text-white text-xl py-2">02</span>
-                </div>
-            </div>
-            <div class="card step-card flex flex-column gap-2 py-2 px-4">
-                <span class="font-bold text-lg">Pague o valor de</span>
-                <span class="font-bold text-3xl" style="color: var(--xbox-green);">{{ raffle.ticket_value | currency: 'BRL' }}</span>
-                <div class="step-number flex justify-content-center align-items-center relative">
-                    <span class="font-light text-white text-xl py-2">03</span>
-                </div>
-            </div>
-            <div class="card step-card flex flex-column gap-2 py-2 px-4">
-                <span class="font-bold text-lg">Aguarde</span>
-                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at diam sit amet tortor semper interdum eget id tortor.</span>
-                <div class="step-number flex justify-content-center align-items-center relative">
-                    <span class="font-light text-white text-xl py-2">04</span>
-                </div>
-            </div>
-        </div> -->
     </div>
     <h3>Sorteio</h3>
-    <div>
-        <p class="text-center mt-1 mb-3">
-            A rifa ocorrerá através do sorteio da <a href="https://loterias.caixa.gov.br/Paginas/Federal.aspx" target="_blank">Loteria federal</a> no dia <span>@if (raffleEndDate) { {{ raffleEndDate | date: "dd/MM/Y" }} - {{ getDayOfWeek(raffleEndDate) }} } @else { <p-skeleton width="11.5rem" styleClass="inline-block" /> }</span>
+    <div class="text-center">
+        <p class="mt-1">
+            O sorteio da nossa rifa será realizado com total transparência e acontecerá no dia 
+            <span class="font-bold">@if (raffleEndDate) { {{ raffleEndDate | date: "dd/MM/Y" }} - {{ getDayOfWeek(raffleEndDate) }} } @else { <p-skeleton width="11.5rem" styleClass="inline-block" /> }</span>
+            utilizando o resultado da <a class="font-bold" href="https://loterias.caixa.gov.br/Paginas/Federal.aspx" target="_blank">Loteria federal</a> como referência.
         </p>
-        <app-timer [limitDate]="raffleEndDate" />
+        <div class="my-4">
+            <app-timer [limitDate]="raffleEndDate" />
+        </div>
+        <p class="my-2">
+            Para definirmos o bilhete ganhador utilizaremos a lógica onde devemos pegar o 1º número do bilhete sorteado pela Loteria Federal no dia do sorteio e dividi-lo pela quantidade total de números da rifa, e o resto da divisão será o número ganhador!
+        </p>
+        <p class="my-2">
+            Exemplificando um caso, se o 1º número sorteado pela Loteria Federal for 3028 e a rifa tiver 200 números, o cálculo será o seguinte:
+        </p>
+        <div class="math-block flex flex-row p-3 font-italic w-min m-auto text-lg my-3">
+            <span class="font-bold">3028</span> 
+            <span class=""> % </span> 
+            <span class="font-bold">200</span> 
+            = <span class="font-bold">28</span>
+          </div>
+        <p class="my-2">
+            Dessa forma, o sorteio será 100% justo e garantirá que todos os participantes tenham chances iguais de ganhar.
+        </p>
+        <p class="my-2">
+            Desejamos boa sorte e, mais uma vez, agradecemos por embarcar nessa jornada conosco!
+        </p>
     </div>
 </div>
