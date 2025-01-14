@@ -38,8 +38,6 @@ export class HeaderComponent implements OnInit {
   ];
 
   ngOnInit(): void {
-    console.log(this.activatedRoute.snapshot.toString());
-
     this.activatedRoute.queryParamMap.subscribe({
       next: (params) => {
         const linkTo: string = this.activatedRoute.snapshot.queryParamMap.get('linkTo') ?? '';

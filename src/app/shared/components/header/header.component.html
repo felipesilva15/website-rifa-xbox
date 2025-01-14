@@ -5,8 +5,7 @@
             @for (item of menuItems; track $index) {
                 <li>
                     <div>
-                        <!-- <a class="no-underline font-bold text-0 hover:underline cursor-pointer" (click)="scrollTo(item.link)">{{ item.label }}</a> -->
-                        <p-button [label]="item.label" variant="text" (click)="scrollTo(item.link)" />
+                        <p-button [label]="item.label" [link]="true" class="text-white" (click)="scrollTo(item.link)" />
                     </div>
                 </li>
             }

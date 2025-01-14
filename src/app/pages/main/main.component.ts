@@ -6,6 +6,7 @@ import { ScrollTop } from 'primeng/scrolltop';
 import { AboutUsComponent } from "./../../features/about-us/about-us.component";
 import { HowItWorksComponent } from "./../../features/how-it-works/how-it-works.component";
 import { HeaderComponent } from "./../../shared/components/header/header.component";
+import { HomeComponent } from "../../features/home/home.component";
 
 @Component({
   selector: 'app-main',
@@ -18,7 +19,8 @@ import { HeaderComponent } from "./../../shared/components/header/header.compone
     AboutUsComponent,
     HowItWorksComponent,
     HeaderComponent,
-  ],
+    HomeComponent
+],
   templateUrl: './main.component.html',
   styleUrl: './main.component.scss'
 })

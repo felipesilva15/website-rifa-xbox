@@ -6,9 +6,13 @@ header {
     &.scrolled {
         background-color: #fff;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    
-        a {
-            color: #000; // Cor do texto quando o fundo é branco
-        }
     }
+}
+
+.p-button-label {
+    color: #fff !important;
+}
+
+.p-button-link {
+    color: #fff !important;
 }
