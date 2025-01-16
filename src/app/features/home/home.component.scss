@@ -1,5 +1,18 @@
-.home {
-    background: var(--xbox-green-dark);
-    background: linear-gradient(90deg, var(--xbox-green-dark) 0%, var(--xbox-green) 34%);
-    padding-top: 60px;
+.shape {
+    padding-top: 80px;
+    width: 85%;
+    background: rgb(14,103,14);
+    background: linear-gradient(90deg, rgba(14,103,14,1) 0%, rgba(31,157,31,1) 34%, rgba(37,173,37,1) 62%);
+    color: white;
+    clip-path: polygon(0 4%, 100% 0%, 100% 85%, 1% 100%);
+}
+
+.shape-container {
+    filter: url('#goo');
+    overflow:hidden;
+    z-index: 1;
+}
+
+.main-shape {
+    margin-bottom: 120px;
 }

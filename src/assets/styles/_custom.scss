@@ -1,0 +1,12 @@
+// Customização para header (Não funciona direto no estilo do component)
+header {
+    .p-button-link {
+        color: #ffffff !important;
+    }
+
+    &.scrolled {
+        .p-button-link {
+            color: var(--p-button-link-color) !important;
+        }   
+    }
+}
