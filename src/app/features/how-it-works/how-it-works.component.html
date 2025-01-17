@@ -10,7 +10,7 @@
         <p class="text-center my-1">
             Para realizar todo o processo de compra dos bilhetes, basta seguir o passo-a-passo abaixo.
         </p>
-        <div class="grid grid-nogutter nested-grid mt-3">
+        <div class="grid hidden sm:flex grid-nogutter nested-grid mt-3">
             <div class="col-6">
                 <div class="flex flex-column align-items-end gap-3 mr-3">
                     <div class="card step-card relative flex flex-column gap-2 py-2 px-4">
@@ -47,6 +47,38 @@
                             <span class="font-light text-white text-xl py-2">04</span>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex sm:hidden flex-column align-items-center gap-4 mt-4">
+            <div class="card step-card relative flex flex-column gap-2 py-2 px-4">
+                <span class="font-bold text-lg">Escolha</span>
+                <span>Escolha um ou mais números disponíveis na cartela logo abaixo.</span>
+                <div class="step-number flex justify-content-center align-items-center absolute">
+                    <span class="font-light text-white text-xl py-2">01</span>
+                </div>
+            </div>
+            <div class="card step-card relative flex flex-column gap-2 py-2 px-4">
+                <span class="font-bold text-lg">Contate-nos</span>
+                <span>Entre em contato conosco para reservarmos seu número e realizar o pagamento por ele(s).</span>
+                <div class="step-number flex justify-content-center align-items-center absolute">
+                    <span class="font-light text-white text-xl py-2">02</span>
+                </div>
+            </div>
+            <div class="card step-card relative flex flex-column gap-2 py-2 px-4">
+                <span class="font-bold text-lg">Pague o valor de</span>
+                <span class="font-bold text-4xl" style="color: var(--xbox-green);">
+                    @if (!isLoading) { {{ raffle.ticket_value | currency }} } @else {<p-skeleton width="8rem" height="30px" styleClass="inline-block" />}
+                </span>
+                <div class="step-number flex justify-content-center align-items-center absolute">
+                    <span class="font-light text-white text-xl py-2">03</span>
+                </div>
+            </div>
+            <div class="card step-card relative flex flex-column gap-2 py-2 px-4">
+                <span class="font-bold text-lg">Aguarde</span>
+                <span>Aguarde até que todos os números da rifa sejam comprados e o bilhete ganhador seja sorteado.</span>
+                <div class="step-number flex justify-content-center align-items-center absolute">
+                    <span class="font-light text-white text-xl py-2">04</span>
                 </div>
             </div>
         </div>
