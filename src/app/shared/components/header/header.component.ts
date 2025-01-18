@@ -1,12 +1,14 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import { MenuItem } from '../../models/menu-item';
+import { MenuItemCustom } from '../../models/menu-item-custom';
 import { ButtonModule } from 'primeng/button';
+import { MenuModule } from 'primeng/menu';
+import { MenuItem } from 'primeng/api';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [ButtonModule],
+  imports: [ButtonModule, MenuModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
@@ -14,7 +16,7 @@ export class HeaderComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute) { }
 
   isScrolled: boolean = false;
-  menuItems: MenuItem[] = [
+  menuItems: MenuItemCustom[] = [
     {
       label: 'Home',
       link: 'home'
@@ -36,6 +38,32 @@ export class HeaderComponent implements OnInit {
       link: 'contacts'
     },
   ];
+  menuItemsCompact: MenuItem[] = [
+    {
+      items: [
+        {
+          label: 'Home',
+          command: () => this.scrollTo('home')
+        },
+        {
+          label: 'Sobre nós',
+          command: () => this.scrollTo('about-us')
+        },
+        {
+          label: 'Como funciona',
+          command: () => this.scrollTo('how-it-works')
+        },
+        {
+          label: 'Cartela',
+          command: () => this.scrollTo('card')
+        },
+        {
+          label: 'contatos',
+          command: () => this.scrollTo('contacts')
+        },
+      ]
+    }
+  ]
 
   ngOnInit(): void {
     this.activatedRoute.queryParamMap.subscribe({

@@ -1,12 +1,20 @@
 // Customização para header (Não funciona direto no estilo do component)
 header {
-    .p-button-link {
+    .p-button-link, .p-button-text {
         color: #ffffff !important;
     }
 
+    .p-button-icon-only:not(:disabled):hover{
+        background: rgb(0, 0, 0, 10%) !important;
+    }
+
     &.scrolled {
-        .p-button-link {
+        .p-button-link, .p-button-text {
             color: var(--p-button-link-color) !important;
         }   
     }
+}
+
+.p-menu-overlay {
+    position: relative;
 }

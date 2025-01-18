@@ -1,14 +1,16 @@
 <header [class.scrolled]="isScrolled" class="fixed top-0 left-0 w-full z-5">
-    <nav class="flex flex-row justify-content-between align-items-center container h-full">
+    <nav class="flex flex-row justify-content-between align-items-center container h-full mx-3 md:mx-auto">
         <a href="#">Logo</a>
-        <ul class="flex flex-row justify-content-end list-none m-0 p-0">
+        <ul class="hidden md:flex flex-row justify-content-end list-none m-0 p-0">
             @for (item of menuItems; track $index) {
                 <li>
-                    <div>
-                        <p-button [label]="item.label" [link]="true" class="text-white" (click)="scrollTo(item.link)" />
-                    </div>
+                    <p-button [label]="item.label" [link]="true" class="text-white" (click)="scrollTo(item.link)" />
                 </li>
             }
         </ul>
+        <div class="block md:hidden">
+            <p-menu #menu [model]="menuItemsCompact" [popup]="true" appendTo="body" />
+            <p-button icon="pi pi-bars" [rounded]="true" [text]="true" (click)="menu.toggle($event)" />
+        </div>
     </nav>
   </header>
