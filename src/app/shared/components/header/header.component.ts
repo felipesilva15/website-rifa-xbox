@@ -70,13 +70,13 @@ export class HeaderComponent implements OnInit {
       next: (params) => {
         const linkTo: string = this.activatedRoute.snapshot.queryParamMap.get('linkTo') ?? '';
 
-        if (linkTo) {
-          this.scrollTo(linkTo);
-        }
+        setTimeout(() => {
+          if (linkTo) {
+            this.scrollTo(linkTo);
+          }
+        }, 500)
       }
-    })
-
-    
+    });
   }
 
   @HostListener('window:scroll', [])
