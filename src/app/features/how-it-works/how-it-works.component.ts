@@ -21,6 +21,7 @@ export class HowItWorksComponent implements OnInit {
   constructor(private raffleService: RaffleService) { }
 
   raffle!: Raffle;
+  ticketNumberExample: number = 3028;
   raffleEndDate!: Date;
   isLoading: boolean = true;
   daysOfWeek: string[] = [

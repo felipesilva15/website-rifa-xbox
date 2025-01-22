@@ -96,15 +96,17 @@
         <p class="my-2">
             Para definirmos o bilhete ganhador utilizaremos a lógica onde devemos pegar o 1º número do bilhete sorteado pela Loteria Federal no dia do sorteio e dividi-lo pela quantidade total de números da rifa, e o resto da divisão será o número ganhador!
         </p>
-        <p class="my-2">
-            Exemplificando um caso, se o 1º número sorteado pela Loteria Federal for 3028 e a rifa tiver 200 números, o cálculo será o seguinte:
-        </p>
-        <div class="math-block flex flex-row p-3 font-italic w-min m-auto text-lg my-3">
-            <span class="font-bold">3028</span> 
-            <span class=""> % </span> 
-            <span class="font-bold">200</span> 
-            = <span class="font-bold">28</span>
-          </div>
+        @if (!isLoading) {
+            <p class="my-2">
+                Exemplificando um caso, se o 1º número sorteado pela Loteria Federal for {{ ticketNumberExample }} e a rifa tiver {{ raffle.maximum_numbers }} números, o cálculo será o seguinte:
+            </p>
+            <div class="math-block flex flex-row p-3 font-italic w-min m-auto text-lg my-3">
+                <span class="font-bold">{{ ticketNumberExample }}</span> 
+                <span class=""> % </span> 
+                <span class="font-bold">{{ raffle.maximum_numbers }}</span> 
+                = <span class="font-bold">{{ ticketNumberExample % raffle.maximum_numbers }}</span>
+            </div>
+        }
         <p class="my-2">
             Dessa forma, o sorteio será 100% justo e garantirá que todos os participantes tenham chances iguais de ganhar.
         </p>
