@@ -6,12 +6,21 @@
     <div class="card my-3 mx-1 flex flex-row flex-wrap justify-content-center gap-3 p-3 number-table">
         @if (!isLoading) {
             @for (item of cardNumbers; track $index) {
-                <div class="number-box p-2">
-                    <span>{{ item.number | padNumber: 3 }}</span>
-                    @if (!item.avaiable) {
-                        <i class="pi pi-times font-bold relative number-unavailable text-lg"></i>
-                    }
-                </div>
+                @if(!item.avaiable) {
+                    <div class="number-box p-2">
+                        <span>{{ item.number | padNumber: 3 }}</span>
+                        @if (!item.avaiable) {
+                            <i class="pi pi-times font-bold relative number-unavailable text-lg"></i>
+                        }
+                    </div>
+                } @else {
+                    <a class="number-box p-2 no-underline text-primary" target="_blank" href="https://wa.me/5511983432682?text=Ol%C3%A1!%20Gostaria%20de%20comprar%20o%20n%C3%BAmero%20{{item.number}}%20referente%20a%20rifa%20do%20Xbox%20Series%20S.%20">
+                        <span>{{ item.number | padNumber: 3 }}</span>
+                        @if (!item.avaiable) {
+                            <i class="pi pi-times font-bold relative number-unavailable text-lg"></i>
+                        }
+                    </a>
+                }
             }
         } @else {
             @for (item of [].constructor(200); track $index) {

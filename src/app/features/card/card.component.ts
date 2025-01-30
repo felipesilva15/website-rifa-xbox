@@ -30,7 +30,6 @@ export class CardComponent implements OnInit {
         this.isLoading = false;
       },
       error: (err: any) => {
-        console.error(err);
         this.isLoading = false;
       }
     });
