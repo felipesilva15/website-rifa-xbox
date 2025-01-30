@@ -55,7 +55,20 @@ export class CardComponent implements OnInit {
   }
 
   requestNumbers(): void {
-    const url: string = `https://wa.me/55${this.contactNumber}?text=Ol%C3%A1!%20Gostaria%20de%20comprar%20o(s)%20n%C3%BAmero(s)%20${this.selectedNumbers.toString()}%20da%20rifa%20do%20Xbox.`;
+    const formattedNumbers: string = this.selectedNumbers.toString().replaceAll(',', ' | ');
+
+    const message: string =
+    `Parabéns por participar do nosso super sorteio!\n\n` +
+    `Já estou reservando os seus números da sorte:\n` +
+    `${formattedNumbers}\n\n` +
+    `Agora é só fazer o PIX para:\n` +
+    `*${this.contactNumber}* - Felipe da Silva Santos\n\n` +
+    `E não se esqueça! Me envie rapidinho o *comprovante* e seu *Nome Completo* para garantir sua participação.\n\n` +
+    `Boa sorte!`;
+
+    const encodedMessage: string = encodeURIComponent(message);
+
+    const url: string = `https://wa.me/55${this.contactNumber}?text=${encodedMessage}`;
 
     window.open(url, "_blank");
     this.selectedNumbers = [];
