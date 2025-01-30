@@ -6,7 +6,7 @@
 
     .number-unavailable {
         top: -19px;
-        left: 5px;
+        left: 10px;
     }
 }
 
@@ -16,4 +16,14 @@
 
 .number-unavailable {
     color: #FF0000;
+}
+
+.selected-number {
+    border: 1.5px solid var(--xbox-green) !important;
+    color: var(--xbox-green) !important;
+    font-weight: 500;
+}
+
+.select-numbers {
+    background: var(--bg-green-gradient);
 }
