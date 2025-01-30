@@ -6,21 +6,12 @@
     <div class="card my-3 mx-1 flex flex-row flex-wrap justify-content-center gap-3 p-3 number-table">
         @if (!isLoading) {
             @for (item of cardNumbers; track $index) {
-                @if(!item.avaiable) {
-                    <div class="number-box p-2">
-                        <span>{{ item.number | padNumber: 3 }}</span>
-                        @if (!item.avaiable) {
-                            <i class="pi pi-times font-bold relative number-unavailable text-lg"></i>
-                        }
-                    </div>
-                } @else {
-                    <a class="number-box p-2 no-underline text-primary" target="_blank" href="https://wa.me/5511983432682?text=Ol%C3%A1!%20Gostaria%20de%20comprar%20o%20n%C3%BAmero%20{{item.number}}%20referente%20a%20rifa%20do%20Xbox%20Series%20S.%20">
-                        <span>{{ item.number | padNumber: 3 }}</span>
-                        @if (!item.avaiable) {
-                            <i class="pi pi-times font-bold relative number-unavailable text-lg"></i>
-                        }
-                    </a>
-                }
+                <div class="number-box py-2 fadein animation-fill-both" [class.cursor-pointer]="item.avaiable" [class.selected-number]="selectedNumbers.includes(item.number)" (click)="toogleNumberSelection(item)" >
+                    <div class="mx-auto w-min">{{ item.number | padNumber: 3 }}</div>
+                    @if (!item.avaiable) {
+                        <i class="pi pi-times font-bold relative number-unavailable text-lg"></i>
+                    }
+                </div>
             }
         } @else {
             @for (item of [].constructor(200); track $index) {
@@ -30,5 +21,14 @@
     </div>
     <div class="flex justify-content-center align-items-center gap-1">
         <i class="pi pi-times font-bold number-unavailable text-lg"></i> - Número não disponível
+    </div>
+    <div class="fixed bottom-0 px-2 py-3 w-full select-numbers border-round-top-lg animation-duration-200 animation-ease-in-out" [class]="selectedNumbers.length ? 'fadeindown' : 'fadeinup'" [style.display]="selectedNumbers.length ? 'block' : 'none'">
+        <div class="flex flex-row justify-content-between align-items-center g-1">
+            <div class="flex flex-column g-1 text-white">
+                <span>Selecionados:</span>
+                <span>{{ selectedNumbers.toString() }}</span>
+            </div>
+            <p-button label="Solicitar números" (onClick)="requestNumbers()" />
+        </div>
     </div>
 </div>
